@@ -22,9 +22,13 @@ public class Lab14 extends Applet
       Shape4Circle Circle = new Shape4Circle();
 
       Square.drawShape(g);
+      Square.displayName(g);
       Triangle.drawShape(g);
+      Triangle.displayName(g);
       Octagon.drawShape(g);
+      Octagon.displayName(g);
       Circle.drawShape(g);
+      Circle.displayName(g);
    }
 
    public void drawGrid(Graphics g)
@@ -39,7 +43,7 @@ abstract interface Shape
 {
    public abstract void drawShape(Graphics g);
 
-   // public abstract void displayName(Graphics g);
+   public abstract void displayName(Graphics g);
 
    // public abstract void displayNumSides(Graphics g);
 }
@@ -49,6 +53,9 @@ class Shape1Square implements Shape
    public void drawShape(Graphics g)
    {
    		g.fillRect(100,50,200,200);
+   }
+   public void displayName(Graphics g)
+   {
    		g.drawString("Square", 40,50);
    }
 }
@@ -62,6 +69,9 @@ class Shape2Triangle implements Shape
 		T.addPoint(500,250);
 		T.addPoint(750,250);
 		g.fillPolygon(T);
+	}
+	public void displayName(Graphics g)
+	{
 		g.drawString("Triangle", 450,50);
 	}
 }
@@ -81,6 +91,9 @@ class Shape3Octagon implements Shape
 		O.addPoint(100,400);
 
 		g.fillPolygon(O);
+	}
+	public void displayName(Graphics g)
+	{
 		g.drawString("Octagon", 40,350);
 	}
 }
@@ -90,6 +103,9 @@ class Shape4Circle implements Shape
 	public void drawShape(Graphics g)
 	{
 		g.fillOval(500,350,225,225);
+	}
+	public void displayName(Graphics g)
+	{
 		g.drawString("Circle", 450,350);
 	}
 }
